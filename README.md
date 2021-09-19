@@ -1,2 +1,2 @@
 # php-crud-basico-com-controle-de-acesso
- CRUD em PHP com Controle de Acesso e SCRIPTs SQL.
+ CRUD básico em PHP com controle de acesso e seus SCRIPTs SQL necessários.
