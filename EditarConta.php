@@ -12,14 +12,14 @@ $id = $_GET["id"];
 
 include 'DadosDeConexao.php';
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+
 if ($conn->connect_error) {
     die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
 
 $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `bancoabc`.`conta` WHERE id =?;");
+
 $stmt->bind_param("i", $id);
 
 $stmt->execute();

@@ -9,14 +9,12 @@ if (empty($_POST['check_list'])) {
 } else {
   include 'dadosDeConexao.php';
 
-  // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
+
   if ($conn->connect_error) {
     die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
   }
 
-  // prepare and bind
   $stmt = $conn->prepare("DELETE FROM `bancoabc`.`conta` WHERE id=?;");
 
   $sucessoDelete = TRUE;

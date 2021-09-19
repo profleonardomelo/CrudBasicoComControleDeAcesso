@@ -16,14 +16,12 @@ $limite = $_POST["limite"];
 
 include 'DadosDeConexao.php';
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+
 if ($conn->connect_error) {
   die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
 
-// prepare and bind
 $stmt = $conn->prepare("INSERT INTO `bancoabc`.`conta`
 (`numero`, `saldo`, `limite`)
 VALUES

@@ -17,14 +17,12 @@ $limite = $_POST["limite"];
 
 include 'DadosDeConexao.php';
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+
 if ($conn->connect_error) {
   die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
 
-// prepare and bind
 $stmt = $conn->prepare("UPDATE `bancoabc`.`conta` SET `numero`=?, `saldo`=?, `limite`=? WHERE `id`=?;");
 $stmt->bind_param("iddi", $numero, $saldo, $limite, $id);
 
