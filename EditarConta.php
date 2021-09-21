@@ -50,4 +50,5 @@ if ($resultado->num_rows > 0) {
     echo ("<input type=\"button\" value=\"Voltar\" onclick=\"location.href='PesquisarContas.php'\" />");
 }
 
+$stmt->close();
 $conn->close();
