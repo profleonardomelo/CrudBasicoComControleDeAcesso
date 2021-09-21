@@ -36,7 +36,7 @@ if ($resultado->num_rows > 0) {
         echo ("<br>");
         echo ("<form action=\"EditarConta_.php\" method=\"post\">");
         echo ("ID da Conta: <input type=\"text\" name=\"id2\"  value=\"" . $id . "\" disabled><br><br>");
-        echo ("<input type=\"hidden\" name=\"id\"  value=\"" . $id . "\"><br><br>");
+        echo ("<input type=\"hidden\" name=\"id\"  value=\"" . $id . "\">");
         echo ("Numero da Conta: <input type=\"text\" name=\"numero\"  value=\"" . $numero . "\"><br><br>");
         echo ("Saldo da Conta: <input type=\"text\" name=\"saldo\" value=\"" . $saldo . "\"><br><br>");
         echo ("Limite da Conta: <input type=\"text\" name=\"limite\" value=\"" . $limite . "\"><br><br><br>");
