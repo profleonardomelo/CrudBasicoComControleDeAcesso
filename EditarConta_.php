@@ -2,7 +2,7 @@
 
 include 'VerificarAcesso.php';
 
-echo "<h2>Editar de Conta</h2>";
+echo "<h2>Edição de Conta</h2>";
 
 if (empty($_POST['id']) || empty($_POST['numero']) || empty($_POST['saldo']) || empty($_POST['limite'])) {
   echo ("Os campos 'id', 'Número', 'Saldo' e 'Limite' são Obrigatórios.<br><br>");
