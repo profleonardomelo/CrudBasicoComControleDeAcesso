@@ -8,7 +8,7 @@
       include 'Menu.php';
       ?>
 
-      <h2>Pesquisar de Contas</h2>
+      <h2>Pesquisa de Contas</h2>
       <br>
       <form action="PesquisarContas_.php" method="post">
             Id: <input type="text" name="id"><br><br>
