@@ -46,13 +46,44 @@ if ($resultado->num_rows > 0) {
 
   echo "<form action='ExcluirContas.php' method='post'>";
 
+  echo ("<table border='1' style='border-collapse: collapse'>");
+
+  echo("<tr>");
+
+     echo("<th></th>");
+     echo("<th>ID</th>");
+     echo("<th>Número</th>");
+     echo("<th>Saldo</th>");
+     echo("<th>Limite</th>");
+     echo("<th></th>");
+
+  echo("</tr>");
+
   while ($linha = $resultado->fetch_assoc()) {
+    
+    echo("<tr>");
+    echo("<td>");
     echo "<input name='check_list[]' type='checkbox' value='" . $linha["id"] . "'>";
-    echo "id: " . $linha["id"] . " - Número: " . $linha["numero"] . " - Saldo: " . $linha["saldo"] . " - Limite: " . $linha["limite"];
-    echo ("&nbsp;");
+    echo("</td>");
+    echo("<td>");
+    echo ($linha["id"]);
+    echo("</td>");
+    echo("<td>");
+    echo ($linha["numero"]);
+    echo("</td>");
+    echo("<td>");
+    echo ($linha["saldo"]);
+    echo("</td>");
+    echo("<td>");
+    echo ($linha["limite"]);
+    echo("<td>"); 
     echo ("<input type=\"button\" value=\"Editar\" onclick=\"location.href='EditarConta.php?id=" . $linha["id"] . "'\" />");
-    echo "<br>";
+    echo("</td>");
+    echo("</tr>");
+
   }
+
+  echo ("</table>");
 
   echo "<br>";
 
