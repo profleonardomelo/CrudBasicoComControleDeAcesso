@@ -2,6 +2,17 @@
 
 include 'VerificarAcesso.php';
 
+if (!(isset($_POST['id'])) || (!isset($_POST['numero']))) {
+  echo ("<h2>Acesso Direto à Página Não Permitido</h2>");
+  echo ("É necessário realizar uma pesquisa antes de acessar esta página. <br><br>");
+  echo ("Clique no botão abaixo para realizar uma pesquisa válida: <br><br>"); 
+  echo ("<input type=\"button\" value=\"Pesquisar\" onclick=\"location.href='PesquisarContas.php'\" />");
+  die();
+}
+
+$id = $_POST["id"];
+$numero = $_POST["numero"];
+
 include 'Menu.php';
 
 echo "<h2>Lista de Contas</h2>";
@@ -13,9 +24,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
-
-$id = $_POST["id"];
-$numero = $_POST["numero"];
 
 if ($numero == '' && $id == '') {
   $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `bancoabc`.`conta`;");
