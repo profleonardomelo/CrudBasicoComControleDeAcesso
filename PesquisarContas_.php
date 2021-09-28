@@ -95,14 +95,20 @@ if ($resultado->num_rows > 0) {
 
   echo "<br>";
 
+  echo ("<input type=\"button\" value=\"Voltar\" onclick=\"location.href='PesquisarContas.php'\" />");
+
+  echo ("&nbsp;");
+
   echo "<input type='submit' onclick='return confirm(\"Deseja realmente excluir a(s) conta(s) selecionada(s)?\")' value='Excluir'>";
 
   echo "</form>";
 } else {
   echo "Sem registros de conta no sistema.<br><br>";
+
+  echo ("<input type=\"button\" value=\"Voltar\" onclick=\"location.href='PesquisarContas.php'\" />");
 }
 
-echo ("<input type=\"button\" value=\"Voltar\" onclick=\"location.href='PesquisarContas.php'\" />");
+
 
 $stmt->close();
 $conn->close();
