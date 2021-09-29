@@ -22,7 +22,7 @@ if ($conn->connect_error) {
     die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("select id FROM `bancoabc`.`usuario` WHERE login=? AND senha=?;");
+$stmt = $conn->prepare("SELECT id FROM `bancoabc`.`usuario` WHERE login=? AND senha=?;");
 $stmt->bind_param("ss", $login, $senha);
 
 $stmt->execute();
@@ -32,10 +32,7 @@ if ($resultado->num_rows == 1) {
 
     session_start();
 
-    if (!isset($_SESSION['logado'])) {
-
-        $_SESSION['logado'] = true;
-    }
+    $_SESSION['logado'] = true;
 
     $stmt->close();
     $conn->close();
