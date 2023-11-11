@@ -22,7 +22,7 @@ if ($conn->connect_error) {
     die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("SELECT id FROM `bancoabc`.`usuario` WHERE login=? AND senha=?;");
+$stmt = $conn->prepare("SELECT id FROM `usuario` WHERE login=? AND senha=?;");
 $stmt->bind_param("ss", $login, $senha);
 
 $stmt->execute();

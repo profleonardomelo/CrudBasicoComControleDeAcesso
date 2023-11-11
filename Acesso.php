@@ -3,7 +3,7 @@
 
 <body>
 
-    <h2>Acesso ao Sistema - Banco ABC</h2>
+    <h2>Acesso ao Sistema - Banco PHP</h2>
     <br>
     <form action="Acesso_.php" method="post">
         Login: <input type="text" name="login"><br><br>

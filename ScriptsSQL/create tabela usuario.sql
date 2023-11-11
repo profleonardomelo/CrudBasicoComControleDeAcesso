@@ -1,4 +1,4 @@
-CREATE TABLE `bancoabc`.`usuario` (
+CREATE TABLE `usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(45) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,

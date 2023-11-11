@@ -23,7 +23,8 @@ if ($conn->connect_error) {
   die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("UPDATE `bancoabc`.`conta` SET `numero`=?, `saldo`=?, `limite`=? WHERE `id`=?;");
+$stmt = $conn->prepare("UPDATE `conta` SET `numero`=?, `saldo`=?, `limite`=? WHERE `id`=?;");
+
 $stmt->bind_param("iddi", $numero, $saldo, $limite, $id);
 
 if ($stmt->execute() === TRUE) {

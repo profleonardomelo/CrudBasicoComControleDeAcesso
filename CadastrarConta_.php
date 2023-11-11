@@ -22,10 +22,7 @@ if ($conn->connect_error) {
   die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("INSERT INTO `bancoabc`.`conta`
-(`numero`, `saldo`, `limite`)
-VALUES
-(?, ?, ?);");
+$stmt = $conn->prepare("INSERT INTO `conta` (`numero`, `saldo`, `limite`) VALUES (?, ?, ?);");
 
 $stmt->bind_param("idd", $numero, $saldo, $limite);
 

@@ -1,4 +1,4 @@
-CREATE TABLE `bancoabc`.`conta` (
+CREATE TABLE `conta` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `numero` INT NOT NULL,
   `saldo` DOUBLE NOT NULL,

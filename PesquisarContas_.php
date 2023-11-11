@@ -26,23 +26,23 @@ if ($conn->connect_error) {
 }
 
 if ($numero == '' && $id == '') {
-  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `bancoabc`.`conta`;");
+  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `conta`;");
 }
 
 if ($numero != '' && $id == '') {
-  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `bancoabc`.`conta` WHERE numero =?;");
+  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `conta` WHERE numero =?;");
   
   $stmt->bind_param("i", $numero);
 }
 
 if ($numero == '' && $id != '') {
-  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `bancoabc`.`conta` WHERE id =?;");
+  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `conta` WHERE id =?;");
   
   $stmt->bind_param("i", $id);
 }
 
 if ($numero != '' && $id != '') {
-  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `bancoabc`.`conta` WHERE id =? AND numero=?;");
+  $stmt = $conn->prepare("SELECT id, numero, saldo, limite FROM `conta` WHERE id =? AND numero=?;");
   
   $stmt->bind_param("ii", $id, $numero);
 }
@@ -70,23 +70,30 @@ if ($resultado->num_rows > 0) {
   while ($linha = $resultado->fetch_assoc()) {
     
     echo("<tr>");
+
     echo("<td>");
     echo "<input name='check_list[]' type='checkbox' value='" . $linha["id"] . "'>";
     echo("</td>");
+
     echo("<td>");
     echo ($linha["id"]);
     echo("</td>");
+
     echo("<td>");
     echo ($linha["numero"]);
     echo("</td>");
+
     echo("<td>");
     echo ($linha["saldo"]);
     echo("</td>");
+
     echo("<td>");
     echo ($linha["limite"]);
     echo("<td>"); 
+
     echo ("<input type=\"button\" value=\"Editar\" onclick=\"location.href='EditarConta.php?id=" . $linha["id"] . "'\" />");
     echo("</td>");
+    
     echo("</tr>");
 
   }

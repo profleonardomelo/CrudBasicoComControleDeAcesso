@@ -15,7 +15,7 @@ if (empty($_POST['check_list'])) {
     die("A conexão com o banco de dados falhou. Erro: " . $conn->connect_error);
   }
 
-  $stmt = $conn->prepare("DELETE FROM `bancoabc`.`conta` WHERE id=?;");
+  $stmt = $conn->prepare("DELETE FROM `conta` WHERE id=?;");
 
   $sucessoDelete = TRUE;
 

@@ -1,4 +1,4 @@
-INSERT INTO `bancoabc`.`usuario`
+INSERT INTO `usuario`
 (`login`, `senha`)
 VALUES
 ('leo', '123');
